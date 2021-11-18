@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   test.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/18 16:34:35 by yhadari           #+#    #+#             */
-/*   Updated: 2021/11/18 17:28:45 by yhadari          ###   ########.fr       */
+/*   Created: 2021/11/18 17:39:06 by yhadari           #+#    #+#             */
+/*   Updated: 2021/11/18 18:36:26 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "test.hpp"
 
-int main(int argc, char **argv)
+Sample::~Sample(void){
+    std::cout << "destructor called " << std::endl;
+    return ;
+}
+Sample::Sample(char p1, int p2, float p3) : a1(p1), a2(p2), a3(p3){
+    std::cout << "constructor called " << std::endl;
+    return ;
+}
+
+int main()
 {
-    if (argc == 1){
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-        return (0);
-    }
-    for(int i = 1; i < argc; i++)
-    {
-        for(int j = 0; argv[i][j]; j++)
-            if (islower(argv[i][j]))
-                argv[i][j] = toupper(argv[i][j]);
-        std::cout << argv[i];
-    }
-    std::cout << std::endl;
+    Sample instance('3', 1, 1.2f);
+    std::cout << instance.a1 << std::endl;
+    std::cout << instance.a2 << std::endl;
+    std::cout << instance.a3 << std::endl;
     return (0);
 }
