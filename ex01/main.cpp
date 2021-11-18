@@ -6,26 +6,23 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 19:23:53 by yhadari           #+#    #+#             */
-/*   Updated: 2021/11/18 21:22:39 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/11/18 22:49:42 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
-int main(int argc, char **argv)
+int main()
 {
-    argc = 1;
-    argv = NULL;
+    int index = -1 ;
     Phonebook phonebook;
-    std::string cmd;
+    std::string cmd = "";
 
     phonebook.contacts = new Contact[8];
     phonebook.nb = 0;
-    std::cout << "enter a command : ";
-    std::cin >> cmd;
-    while (cmd.compare("EXIT"))
+    while (1)
     {
-        while (cmd.compare("ADD") && cmd.compare("SEARCH"))
+        while (cmd.compare("ADD") && cmd.compare("SEARCH") && cmd.compare("EXIT"))
         {
             std::cout << "enter a command : ";
             std::cin >> cmd;
@@ -44,8 +41,21 @@ int main(int argc, char **argv)
             std::cin >> phonebook.contacts[phonebook.nb%8].darkset_secret;
             phonebook.nb++;
         }
+        else if (!cmd.compare("SEARCH"))
+        {
+            while (++index < phonebook.nb)
+            {
+                std::cout << index;
+                phonebook.display(phonebook.contacts[index].first_name);
+                phonebook.display(phonebook.contacts[index].last_name);
+                phonebook.display(phonebook.contacts[index].nickname);
+                std::cout << std::endl;
+            }
+        }
+        else if (!cmd.compare("EXIT"))
+            return (0);
         cmd = "";
+        index = -1;
     }
-    delete[] phonebook.contacts;
     return (0);
 }

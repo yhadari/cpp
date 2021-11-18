@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 19:19:42 by yhadari           #+#    #+#             */
-/*   Updated: 2021/11/18 21:19:32 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/11/18 21:47:29 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,13 @@
 
 class Contact{
   public:
-  char first_name[512];
-  char last_name[512];
-  char nickname[512];
-  char phone_number[512];
-  char darkset_secret[512];
+  std::string first_name;
+  std::string last_name;
+  std::string nickname;
+  std::string phone_number;
+  std::string darkset_secret;
   
-  Contact(void){
-    
-  };
+  Contact(void);
   ~Contact(void);
 };
 #endif

@@ -6,11 +6,15 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 19:19:52 by yhadari           #+#    #+#             */
-/*   Updated: 2021/11/18 20:00:05 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/11/18 21:48:04 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "contact.hpp"
 
 Contact::~Contact(void){
+    
+}
+
+Contact::Contact(void){
 }

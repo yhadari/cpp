@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 19:09:40 by yhadari           #+#    #+#             */
-/*   Updated: 2021/11/18 21:04:46 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/11/18 22:38:33 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 # define PHONEBOOK_H
 
 #include "contact.hpp"
+#include <iomanip>
+#include <string>
 
 class Phonebook{
   public:
   Contact *contacts;
   int nb;
   
-  Phonebook(void){
-    
-  };
+  Phonebook(void);
   ~Phonebook(void);
+  void  display(std::string);
 };
 #endif
