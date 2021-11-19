@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 19:09:40 by yhadari           #+#    #+#             */
-/*   Updated: 2021/11/18 22:38:33 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/11/19 17:09:06 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ class Phonebook{
   Phonebook(void);
   ~Phonebook(void);
   void  display(std::string);
+  void  add(void);
+  void  search(void);
 };
 #endif
