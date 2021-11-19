@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 19:23:53 by yhadari           #+#    #+#             */
-/*   Updated: 2021/11/19 17:12:30 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/11/19 21:53:41 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@ int main()
     phonebook.nb = 0;
     while (1)
     {
-        while (cmd.compare("ADD") && cmd.compare("SEARCH") && cmd.compare("EXIT"))
+        while (cmd != "ADD" && cmd != "SEARCH" && cmd!= "EXIT")
         {
             std::cout << "enter a command : ";
             getline(std::cin, cmd);
         }
-        if (!cmd.compare("ADD"))
+        if (cmd == "ADD")
             phonebook.add();
-        else if (!cmd.compare("SEARCH"))
+        else if (cmd == "SEARCH")
             phonebook.search();
-        else if (!cmd.compare("EXIT"))
+        else if (cmd == "EXIT")
             return (0);
         cmd = "";
     }
