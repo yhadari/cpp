@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 19:19:42 by yhadari           #+#    #+#             */
-/*   Updated: 2021/11/19 21:32:27 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/11/20 16:00:01 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 
 class Contact{
+  
   private:
   std::string first_name;
   std::string last_name;

@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 19:23:53 by yhadari           #+#    #+#             */
-/*   Updated: 2021/11/19 21:53:41 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/11/20 16:10:12 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,14 @@
 int main()
 {
     Phonebook phonebook;
+    Contact *contacts;
+    int nb;
     std::string cmd = "";
 
-    phonebook.contacts = new Contact[8];
-    phonebook.nb = 0;
+    nb = 0;
+    contacts = new Contact[8];
+    phonebook.set_contacts(contacts);
+    phonebook.set_nb(nb);
     while (1)
     {
         while (cmd != "ADD" && cmd != "SEARCH" && cmd!= "EXIT")

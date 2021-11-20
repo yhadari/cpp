@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 19:09:40 by yhadari           #+#    #+#             */
-/*   Updated: 2021/11/19 20:43:58 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/11/20 16:01:56 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,23 @@
 #include <string>
 
 class Phonebook{
-  public:
-  Contact *contacts;
-  int nb;
   
-  Phonebook(void);
-  ~Phonebook(void);
+  private:
+  Contact *contacts;
+  int     nb;
+  
+  public:
+  void  set_contacts(Contact*);
+  void  set_nb(int);
+
+  Contact*  get_contacts();
+  int       get_nb();
+  
   void  display(std::string);
   void  add(void);
   void  search(void);
+
+  Phonebook(void);
+  ~Phonebook(void);
 };
 #endif
