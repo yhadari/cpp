@@ -6,15 +6,14 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 19:21:00 by yhadari           #+#    #+#             */
-/*   Updated: 2021/11/20 18:45:57 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/11/21 14:12:12 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
 Phonebook::Phonebook(void){
-    
-    this->_nb = 0;
+    _nb = 0;
 }
 
 void    Phonebook::set_nb(int nb){
