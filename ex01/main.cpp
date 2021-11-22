@@ -6,11 +6,11 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 19:23:53 by yhadari           #+#    #+#             */
-/*   Updated: 2021/11/20 18:31:20 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/11/22 22:05:26 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
 
 int main()
 {
@@ -19,18 +19,14 @@ int main()
 
     while (1)
     {
-        while (cmd != "ADD" && cmd != "SEARCH" && cmd!= "EXIT")
-        {
-            std::cout << "enter a command : ";
-            getline(std::cin, cmd);
-        }
+        std::cout << "enter a command : ";
+        getline(std::cin, cmd);
         if (cmd == "ADD")
             phonebook.add();
         else if (cmd == "SEARCH")
             phonebook.search();
         else if (cmd == "EXIT")
             return (0);
-        cmd = "";
     }
     return (0);
 }

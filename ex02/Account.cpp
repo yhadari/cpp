@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 10:35:01 by yhadari           #+#    #+#             */
-/*   Updated: 2021/11/21 16:18:33 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/11/22 22:14:08 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int Account::getNbWithdrawals(){
     return (_totalNbWithdrawals);
 }
 
-void    display(int nb){
+void    display_time(int nb){
     
     if (std::to_string(nb).length() == 1)
         std::cout << '0';
@@ -45,15 +45,14 @@ void    Account::_displayTimestamp(){
     tm *ltm = localtime(&now);
     
     std::cout << "[";
-    display(1900+ltm->tm_year);
-    display(1+ltm->tm_mon);
-    display(ltm->tm_mday);
+    display_time(1900+ltm->tm_year);
+    display_time(1+ltm->tm_mon);
+    display_time(ltm->tm_mday);
     std::cout << "_";
-    display(ltm->tm_hour);
-    display(ltm->tm_min);
-    display(ltm->tm_sec);
+    display_time(ltm->tm_hour);
+    display_time(ltm->tm_min);
+    display_time(ltm->tm_sec);
     std::cout << "] ";
-    
 }
 
 Account::Account( int initial_deposit ){

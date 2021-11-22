@@ -6,14 +6,14 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 19:09:40 by yhadari           #+#    #+#             */
-/*   Updated: 2021/11/20 19:12:41 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/11/22 22:08:28 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_H
 # define PHONEBOOK_H
 
-#include "contact.hpp"
+#include "Contact.hpp"
 #include <iomanip>
 #include <string>
 
@@ -24,11 +24,10 @@ class Phonebook{
   int     _nb;
   
   public:
-  void  set_nb(int);
 
   Contact*  get_contacts();
   int       get_nb();
-  
+  void  set_nb(int);
   void  display(std::string);
   void  add(void);
   void  search();
