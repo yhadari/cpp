@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 19:21:00 by yhadari           #+#    #+#             */
-/*   Updated: 2021/11/22 22:10:56 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/11/24 15:13:42 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,17 +98,17 @@ void    Phonebook::search(){
             std::cout << "which index do you want : ";
             getline(std::cin, cmd);
         }
-        while (cmd == "" || is_not_dig(cmd) || stoi(cmd) > _nb-1 || stoi(cmd) < 0 || stoi(cmd) >= 8)
+        while (cmd == "" || is_not_dig(cmd) || atoi(cmd.c_str()) > _nb-1 || atoi(cmd.c_str()) < 0 || atoi(cmd.c_str()) >= 8)
         {
             std::cout << "enter a valid number : ";
             getline(std::cin, cmd);
         }
         std::cout << "-------------------------------" << std::endl;
-        std::cout << "first name     : " << _contacts[stoi(cmd)].get_first_name() << std::endl;
-        std::cout << "last name      : " << _contacts[stoi(cmd)].get_last_name() << std::endl;
-        std::cout << "nickname       : " << _contacts[stoi(cmd)].get_nickname() << std::endl;
-        std::cout << "phone number   : " << _contacts[stoi(cmd)].get_phone_number() << std::endl;
-        std::cout << "darkest secret : " << _contacts[stoi(cmd)].get_darkset_secret() << std::endl;
+        std::cout << "first name     : " << _contacts[atoi(cmd.c_str())].get_first_name() << std::endl;
+        std::cout << "last name      : " << _contacts[atoi(cmd.c_str())].get_last_name() << std::endl;
+        std::cout << "nickname       : " << _contacts[atoi(cmd.c_str())].get_nickname() << std::endl;
+        std::cout << "phone number   : " << _contacts[atoi(cmd.c_str())].get_phone_number() << std::endl;
+        std::cout << "darkest secret : " << _contacts[atoi(cmd.c_str())].get_darkset_secret() << std::endl;
         std::cout << "-------------------------------" << std::endl;
     }
 }
