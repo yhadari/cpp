@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 19:23:53 by yhadari           #+#    #+#             */
-/*   Updated: 2021/11/25 14:14:00 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/11/25 22:10:10 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int main()
     Phonebook phonebook;
     std::string cmd = "";
 
-    while (1)
-    {
+    while (!std::cin.eof())
+    { 
         std::cout << "enter a command : ";
         getline(std::cin, cmd);
         if (cmd == "ADD")

@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 19:21:00 by yhadari           #+#    #+#             */
-/*   Updated: 2021/11/25 15:37:40 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/11/25 22:28:43 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ void  Phonebook::display(std::string str) const{
 std::string get_info(std::string str){
     
     std::string info;
-    std::cout << str;
+    if (!std::cin.eof())
+        std::cout << str;
     getline(std::cin, info);
     return info;
 }
@@ -82,22 +83,26 @@ void    Phonebook::search() const{
     {
         std::string cmd = "";
         
-        while (cmd == "")
+        while (cmd == "" && !std::cin.eof())
         {
             std::cout << "which index do you want : ";
             getline(std::cin, cmd);
         }
-        while (cmd == "" || is_not_dig(cmd) || atoi(cmd.c_str()) > this->_nb-1 || atoi(cmd.c_str()) < 0 || atoi(cmd.c_str()) >= 8)
+        while ((cmd == "" || is_not_dig(cmd) || atoi(cmd.c_str()) > this->_nb-1
+        || atoi(cmd.c_str()) < 0 || atoi(cmd.c_str()) >= 8) && !std::cin.eof())
         {
             std::cout << "enter a valid number : ";
             getline(std::cin, cmd);
         }
-        std::cout << "-------------------------------" << std::endl;
-        std::cout << "first name     : " << this->_contacts[atoi(cmd.c_str())].get_first_name() << std::endl;
-        std::cout << "last name      : " << this->_contacts[atoi(cmd.c_str())].get_last_name() << std::endl;
-        std::cout << "nickname       : " << this->_contacts[atoi(cmd.c_str())].get_nickname() << std::endl;
-        std::cout << "phone number   : " << this->_contacts[atoi(cmd.c_str())].get_phone_number() << std::endl;
-        std::cout << "darkest secret : " << this->_contacts[atoi(cmd.c_str())].get_darkset_secret() << std::endl;
-        std::cout << "-------------------------------" << std::endl;
+        if (!std::cin.eof())
+        {
+            std::cout << "-------------------------------" << std::endl;
+            std::cout << "first name     : " << this->_contacts[atoi(cmd.c_str())].get_first_name() << std::endl;
+            std::cout << "last name      : " << this->_contacts[atoi(cmd.c_str())].get_last_name() << std::endl;
+            std::cout << "nickname       : " << this->_contacts[atoi(cmd.c_str())].get_nickname() << std::endl;
+            std::cout << "phone number   : " << this->_contacts[atoi(cmd.c_str())].get_phone_number() << std::endl;
+            std::cout << "darkest secret : " << this->_contacts[atoi(cmd.c_str())].get_darkset_secret() << std::endl;
+            std::cout << "-------------------------------" << std::endl;
+        }
     }
 }
