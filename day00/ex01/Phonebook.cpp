@@ -6,14 +6,14 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 19:21:00 by yhadari           #+#    #+#             */
-/*   Updated: 2021/11/25 14:24:06 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/11/25 15:37:40 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
 
-Phonebook::Phonebook(void){
-    this->_nb = 0;
+Phonebook::Phonebook(void) : _nb(0) {
+    return;
 }
 
 void  Phonebook::display(std::string str) const{
