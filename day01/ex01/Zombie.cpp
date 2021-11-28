@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 19:02:04 by yhadari           #+#    #+#             */
-/*   Updated: 2021/11/28 19:47:54 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/11/28 21:30:23 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Zombie::Zombie(std::string name) : _name(name)
 
 Zombie::~Zombie()
 {
-    std::cout << this->_name << " destructor called" << std::endl;
+    std::cout << this->_name << " died" << std::endl;
 }
 
 void    Zombie::announce(void) const{

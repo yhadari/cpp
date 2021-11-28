@@ -5,23 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/28 19:05:55 by yhadari           #+#    #+#             */
-/*   Updated: 2021/11/28 21:33:42 by yhadari          ###   ########.fr       */
+/*   Created: 2021/11/28 21:38:06 by yhadari           #+#    #+#             */
+/*   Updated: 2021/11/28 21:51:25 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
+using std::string;
+using std::cout;
+using std::endl;
 
 int main(){
+    
+    string str = "HI THIS IS BRAIN";
+    string *stringPTR = &str;
+    string &stringREF = str;
 
-    int i = 0;
-    int nb_zombie = 5;
-    if (nb_zombie > 0)
-    {
-            Zombie *zombies = zombieHorde(nb_zombie, "zombie");
-        while (i < nb_zombie)
-            zombies[i++].announce();
-        delete [] zombies;
-    }
+    cout << &str << endl;
+    cout << stringPTR << endl;
+    cout << &stringREF << endl;
+    cout << str << endl;
+    cout << stringREF << endl;
+
     return 0;
 }
