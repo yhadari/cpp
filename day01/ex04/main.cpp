@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 18:53:33 by yhadari           #+#    #+#             */
-/*   Updated: 2021/11/30 22:38:48 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/11/30 22:44:57 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ int main (int argc, char **argv)
   {
     str.append(tmp);
     check_str(str, s1, s2);
-    str.append("\n");
+    if (!filename.eof())
+      str.append("\n");
   }
   file_replace << str << std::endl;
   filename.close();
