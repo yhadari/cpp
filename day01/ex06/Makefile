@@ -1,4 +1,4 @@
-NAME = karen
+NAME = karenFilter
 
 all : $(NAME)
 

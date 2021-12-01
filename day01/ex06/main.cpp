@@ -6,23 +6,18 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 17:50:15 by yhadari           #+#    #+#             */
-/*   Updated: 2021/12/01 21:39:16 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/12/01 21:45:54 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Karen.hpp"
 
-int main(){
+int main(int argc, char **argv){
     
+    if (argc != 2 && std::cout << "ERROR" << std::endl)
+        return 0;
     Karen karen;
 
-    karen.complain("DEBUG");
-    std::cout << std::endl;
-    karen.complain("INFO");
-    std::cout << std::endl;
-    karen.complain("WARNING");
-    std::cout << std::endl;
-    karen.complain("ERROR");
-    std::cout << std::endl;
+    karen.complain(argv[1]);
     return 0;
 }

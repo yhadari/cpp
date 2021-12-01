@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 17:43:57 by yhadari           #+#    #+#             */
-/*   Updated: 2021/12/01 21:44:13 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/12/01 21:54:16 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,18 @@ void    Karen::error(void){
 }
 void    Karen::complain(std::string level){
     
+    int is_insignificant = 1;
+    
     std::string strings[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
     void (Karen::*FT[4])(void) = {&Karen::debug, &Karen::info, &Karen::warning, &Karen::error};
     
     for(int i = 0; i < 4; i++){
-        if (strings[i] == level)
-            (this->*FT[i])();
+        if (strings[i] == level){
+            is_insignificant = 0;
+            while (i < 4)
+            (this->*FT[i++])();
+        }
     }
+    if (is_insignificant)
+        std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 }

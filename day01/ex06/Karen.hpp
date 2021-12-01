@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/01 17:50:15 by yhadari           #+#    #+#             */
-/*   Updated: 2021/12/01 21:39:16 by yhadari          ###   ########.fr       */
+/*   Created: 2021/12/01 17:34:13 by yhadari           #+#    #+#             */
+/*   Updated: 2021/12/01 19:53:27 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#ifndef KAREN_H
+# define KAREN_H
 
-int main(){
+#include <iostream>
+
+class Karen{
     
-    Karen karen;
+    void    debug(void);
+    void    info(void);
+    void    warning(void);
+    void    error(void);
+    
+    public:
 
-    karen.complain("DEBUG");
-    std::cout << std::endl;
-    karen.complain("INFO");
-    std::cout << std::endl;
-    karen.complain("WARNING");
-    std::cout << std::endl;
-    karen.complain("ERROR");
-    std::cout << std::endl;
-    return 0;
-}
+    void    complain(std::string level);
+};
+
+#endif
