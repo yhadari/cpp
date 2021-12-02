@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 17:43:57 by yhadari           #+#    #+#             */
-/*   Updated: 2021/12/01 21:44:13 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/12/02 20:29:16 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ void    Karen::error(void){
 void    Karen::complain(std::string level){
     
     std::string strings[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-    void (Karen::*FT[4])(void) = {&Karen::debug, &Karen::info, &Karen::warning, &Karen::error};
+    void (Karen::*Ptr_To_FT[4])(void) = {&Karen::debug, &Karen::info, &Karen::warning, &Karen::error};
     
     for(int i = 0; i < 4; i++){
         if (strings[i] == level)
-            (this->*FT[i])();
+            (this->*Ptr_To_FT[i])();
     }
 }

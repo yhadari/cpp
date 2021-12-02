@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 21:38:06 by yhadari           #+#    #+#             */
-/*   Updated: 2021/12/01 22:25:19 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/12/02 21:50:07 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(){
     std::cout << "Address of the string : " << &stringREF << std::endl;
     
     std::cout << "the string : " << str << std::endl;
+    std::cout << "the string : " << *stringPTR << std::endl;
     std::cout << "the string : " << stringREF << std::endl;
-
     return 0;
 }

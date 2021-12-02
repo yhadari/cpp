@@ -6,11 +6,14 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 17:09:46 by yhadari           #+#    #+#             */
-/*   Updated: 2021/11/28 18:29:01 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/12/02 19:43:19 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+Zombie::Zombie(){
+}
 
 Zombie::Zombie(std::string name) : _name(name)
 {

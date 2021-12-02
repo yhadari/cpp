@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 17:09:51 by yhadari           #+#    #+#             */
-/*   Updated: 2021/11/28 18:28:56 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/12/02 19:39:05 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Zombie{
 
     public:
     
+      Zombie();
       Zombie(std::string);
       ~Zombie();
       
