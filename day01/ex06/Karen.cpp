@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 17:43:57 by yhadari           #+#    #+#             */
-/*   Updated: 2021/12/01 21:54:16 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/12/02 18:13:20 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@ void    Karen::debug(void){
     
     std::cout << "[ DEBUG ]" << std::endl;
     std::cout << "I love to get extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger." << std::endl;
-    std::cout << "I just love it!" << std::endl;
+    std::cout << "I just love it!" << std::endl << std::endl;
 }
 void    Karen::info(void){
 
     std::cout << "[ INFO ]" << std::endl;
     std::cout << "I cannot believe adding extra bacon cost more money." << std::endl;
-    std::cout << "You don’t put enough! If you did I would not have to ask for it!" << std::endl;
+    std::cout << "You don’t put enough! If you did I would not have to ask for it!" << std::endl << std::endl;
 }
 void    Karen::warning(void){
 
     std::cout << "[ WARNING ]" << std::endl;
     std::cout << "I think I deserve to have some extra bacon for free." << std::endl;
-    std::cout << "I’ve been coming here for years and you just started working here last month." << std::endl;
+    std::cout << "I’ve been coming here for years and you just started working here last month." << std::endl << std::endl;
 }
 void    Karen::error(void){
 
@@ -37,18 +37,24 @@ void    Karen::error(void){
 }
 void    Karen::complain(std::string level){
     
-    int is_insignificant = 1;
-    
+    int i;
     std::string strings[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-    void (Karen::*FT[4])(void) = {&Karen::debug, &Karen::info, &Karen::warning, &Karen::error};
     
-    for(int i = 0; i < 4; i++){
-        if (strings[i] == level){
-            is_insignificant = 0;
-            while (i < 4)
-            (this->*FT[i++])();
-        }
+    for(i = 0; i < 4; i++){
+        if (strings[i] == level)
+            break;
     }
-    if (is_insignificant)
-        std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+    switch(i) {
+        case 0 :
+           debug(); 
+        case 1 :
+            info();
+        case 2 :
+           warning();
+        case 3 :
+           error();
+           break;
+        default :
+           std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+    }
 }

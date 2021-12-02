@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 17:50:15 by yhadari           #+#    #+#             */
-/*   Updated: 2021/12/01 21:45:54 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/12/02 18:15:38 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(int argc, char **argv){
     
-    if (argc != 2 && std::cout << "ERROR" << std::endl)
+    if (argc != 2 && std::cout << "You Need To Put One Arg" << std::endl)
         return 0;
     Karen karen;
 

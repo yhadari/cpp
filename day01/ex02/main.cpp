@@ -6,14 +6,11 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 21:38:06 by yhadari           #+#    #+#             */
-/*   Updated: 2021/11/29 14:41:44 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/12/01 22:25:19 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-// using std::string;
-// using std::cout;
-// using std::endl;
 
 int main(){
     

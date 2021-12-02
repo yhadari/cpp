@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 18:53:33 by yhadari           #+#    #+#             */
-/*   Updated: 2021/12/01 17:14:43 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/12/02 18:17:42 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,28 +21,26 @@ void  check_str(std::string &line, const std::string &s1, const std::string &s2)
   {
     line.erase(found, s1.length());
     line.insert(found, s2);
-    found = line.find(s1);
+    found = line.find(s1, found+s2.length());
   }
 }
 
 int main (int argc, char **argv)
 {
-  if (argc != 4 && std::cout << "ERROR" << std::endl)
+  if (argc != 4 && std::cout << "You Need To Put File & 2 String" << std::endl)
     return 0;
   std::ofstream file_replace("FILENAME.replace");
   std::ifstream filename(argv[1]);
   const std::string s1 = argv[2];
   const std::string s2 = argv[3];
-  std::string str;
   std::string tmp;
   while (getline(filename, tmp))
   {
-    str.append(tmp);
-    check_str(str, s1, s2);
+    check_str(tmp, s1, s2);
+    file_replace << tmp;
     if (!filename.eof())
-      str.append("\n");
+      file_replace << '\n';
   }
-  file_replace << str;
   filename.close();
   file_replace.close();
   
