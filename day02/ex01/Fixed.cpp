@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 21:20:25 by yhadari           #+#    #+#             */
-/*   Updated: 2021/12/06 17:22:46 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/12/06 20:51:38 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,16 @@ Fixed::Fixed(Fixed const &copy){
     *this = copy;
 }
 
-Fixed::Fixed(const int nb) : _valeur(nb){
+Fixed::Fixed(const int nb){
     
     std::cout << "Int constructor called" << std::endl;
+    this->_valeur = (nb * (int)(1<<this->_nb_bit));
 }
 
-Fixed::Fixed(const float nb) : _valeur(nb){
+Fixed::Fixed(const float nb){
     
     std::cout << "Float constructor called" << std::endl;
+    this->_valeur = roundf(nb * (float)(1<<this->_nb_bit));
 }
 
 Fixed::~Fixed(){
@@ -45,13 +47,28 @@ Fixed& Fixed::operator=(Fixed const &copy){
     return *this;
 }
 
+std::ostream&   operator<<(std::ostream& os, Fixed const& objet){
+
+    os << objet.toFloat();
+    return os;
+}
+
 int Fixed::getRawBits(void) const{
 
-    std::cout << "getRawBits member function called" << std::endl;
     return this->_valeur;
 }
 
 void    Fixed::setRawBits(int const raw){
 
     this->_valeur = raw;
+}
+
+int Fixed::toInt(void) const{
+
+    return ((int)this->_valeur / (int)(1<<this->_nb_bit));
+}
+
+float Fixed::toFloat(void) const{
+
+    return ((float)this->_valeur / (float)(1<<this->_nb_bit));
 }
