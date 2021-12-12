@@ -47,7 +47,7 @@ bool    Fixed::operator!=(Fixed const &autre){
     return this->_valeur != autre.getRawBits();
 }
 
-std::ostream&   operator<<(std::ostream& os, const Fixed& objet){
+std::ostream&   operator<<(std::ostream& os, Fixed const& objet){
     os << objet.toFloat();
     return os;
 }
@@ -64,23 +64,19 @@ Fixed   Fixed::operator++(int){
 }
 
 Fixed   Fixed::operator*(Fixed const &autre){
-    Fixed tmp(this->toFloat()*autre.toFloat());
-    return tmp;
+    return Fixed(this->toFloat()*autre.toFloat());
 }
 
 Fixed   Fixed::operator/(Fixed const &autre){
-    Fixed tmp(this->toFloat()/autre.toFloat());
-    return tmp;
+    return Fixed(this->toFloat()/autre.toFloat());
 }
 
 Fixed   Fixed::operator+(Fixed const &autre){
-    Fixed tmp(this->toFloat()+autre.toFloat());
-    return tmp;
+    return Fixed(this->toFloat()+autre.toFloat());
 }
 
 Fixed   Fixed::operator-(Fixed const &autre){
-    Fixed tmp(this->toFloat()-autre.toFloat());
-    return tmp;
+    return Fixed(this->toFloat()-autre.toFloat());
 }
 
 Fixed const&  Fixed::max(Fixed &a, Fixed const &b){ 
@@ -106,9 +102,9 @@ void    Fixed::setRawBits(int const raw){
 }
 
 int Fixed::toInt(void) const{
-    return ((int)this->_valeur / (int)(1<<this->_nb_bit));
+    return ((int)this->_valeur/(int)(1<<this->_nb_bit));
 }
 
 float Fixed::toFloat(void) const{
-    return ((float)this->_valeur / (float)(1<<this->_nb_bit));
+    return ((float)this->_valeur/(float)(1<<this->_nb_bit));
 }

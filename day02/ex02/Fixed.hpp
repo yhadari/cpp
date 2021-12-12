@@ -41,6 +41,6 @@ class Fixed{
     bool    operator==(Fixed const &autre);
     bool    operator!=(Fixed const &autre);
 };
-std::ostream&   operator<<(std::ostream& os, const Fixed& objet);
+std::ostream&   operator<<(std::ostream& os, Fixed  const& objet);
 
 #endif
