@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/04 21:18:47 by yhadari           #+#    #+#             */
-/*   Updated: 2021/12/12 00:09:19 by yhadari          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef FIXED_H
 # define FIXED_H
 
@@ -29,12 +17,13 @@ class Fixed{
     Fixed(Fixed const &copy);
     ~Fixed();
 
-    int getRawBits(void) const;
-    void setRawBits(int const raw);
-    float toFloat(void) const;
-    int toInt(void) const;
-    static Fixed const& max(Fixed &a, Fixed const &b);
-    static Fixed const& min(Fixed &a, Fixed const &b);
+    int     getRawBits(void) const;
+    void    setRawBits(int const raw);
+    float   toFloat(void) const;
+    int     toInt(void) const;
+    static  Fixed const &max(Fixed &a, Fixed const &b);
+    static  Fixed const &min(Fixed &a, Fixed const &b);
+    
     Fixed&  operator=(Fixed const &autre);
     
     Fixed&  operator++();
