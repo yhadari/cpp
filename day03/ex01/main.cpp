@@ -1,17 +1,19 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(){
 
-    ClapTrap player1("yassine");
-    ClapTrap player2("oussama");
+    ClapTrap yassine("yassine");
+    ScavTrap brahim("brahim");
 
-    player1.set_attack_damage(4);
-    player1.attack("oussama");
-    player1.takeDamage(3);
-    player1.takeDamage(3);
-    player1.beRepaired(2);
-    player1.beRepaired(4);
-    player1.beRepaired(1);
-
+    yassine.set_attack_damage(2);
+    yassine.attack("brahim");
+    brahim.takeDamage(yassine.get_attack_damage());
+    ScavTrap oussama("oussama");
+    oussama = brahim;
+    oussama.attack("yassine");
+    yassine.set_attack_damage(4);
+    yassine.attack("oussama");
+    oussama.takeDamage(yassine.get_attack_damage());
+    oussama.guardGate();
     return 0;
 }

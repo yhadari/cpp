@@ -1,4 +1,4 @@
-NAME = claptrap
+NAME = scavtrap
 
 all : $(NAME)
 
