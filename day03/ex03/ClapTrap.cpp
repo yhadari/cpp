@@ -1,15 +1,15 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap() : _name("default"), _hit_points(10), _energy_point(10), _attack_damage(0){
-    std::cout << "Claptrap default constructor" << std::endl;
+    std::cout << "ClapTrap default constructor" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hit_points(10), _energy_point(10), _attack_damage(0){
-    std::cout << "Claptrap parameter constructor" << std::endl;
+ClapTrap::ClapTrap(std::string name) : _name(name+"_clap_name"), _hit_points(10), _energy_point(10), _attack_damage(0){
+    std::cout << "ClapTrap parameter constructor" << std::endl;
 }
 
 ClapTrap::~ClapTrap(){
-    std::cout << "Claptrap destructor" << std::endl;
+    std::cout << "ClapTrap destructor" << std::endl;
 }
 
 void    ClapTrap::attack(std::string const& target){
@@ -53,7 +53,7 @@ void    ClapTrap::set_attack_damage(unsigned int damage){
 }
 
 ClapTrap&   ClapTrap::operator=(ClapTrap const&  autre){
-    std::cout << "claptrap Assignation operator" << std::endl;
+    std::cout << "ClapTrap Assignation operator" << std::endl;
     this->_name = autre._name;
     this->_attack_damage = autre._attack_damage;
     this->_hit_points = autre._hit_points;
@@ -62,6 +62,6 @@ ClapTrap&   ClapTrap::operator=(ClapTrap const&  autre){
 }
 
 ClapTrap::ClapTrap(ClapTrap const& copy){
-    std::cout << "claptrap copy constructor" << std::endl;
+    std::cout << "ClapTrap copy constructor" << std::endl;
     *this = copy;
 }

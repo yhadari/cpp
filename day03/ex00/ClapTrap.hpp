@@ -14,7 +14,7 @@ class ClapTrap{
 
     ClapTrap();
     ClapTrap(std::string name);
-    ClapTrap(ClapTrap& autre);
+    ClapTrap(ClapTrap const& copy);
     ClapTrap& operator=(ClapTrap const& autre);
     ~ClapTrap();
     void attack(std::string const& target);

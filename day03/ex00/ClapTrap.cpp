@@ -52,14 +52,16 @@ void    ClapTrap::set_attack_damage(unsigned int damage){
     this->_attack_damage = damage;
 }
 
-ClapTrap&   ClapTrap::operator=(ClapTrap const&  copy){
-    this->_name = copy._name;
-    this->_attack_damage = copy._attack_damage;
-    this->_hit_points = copy._hit_points;
-    this->_energy_point = copy._energy_point;
+ClapTrap&   ClapTrap::operator=(ClapTrap const&  autre){
+    std::cout << "claptrap Assignation operator" << std::endl;
+    this->_name = autre._name;
+    this->_attack_damage = autre._attack_damage;
+    this->_hit_points = autre._hit_points;
+    this->_energy_point = autre._energy_point;
     return *this;
 }
 
-ClapTrap::ClapTrap(ClapTrap& autre){
-    *this = autre;
+ClapTrap::ClapTrap(ClapTrap const& copy){
+    std::cout << "claptrap copy constructor" << std::endl;
+    *this = copy;
 }
