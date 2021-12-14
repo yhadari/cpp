@@ -2,11 +2,21 @@
 
 int main(){
 
-    ClapTrap yassine("yassine");
-    ScavTrap brahim("brahim");
-    FragTrap oussama("oussama");
-    DiamondTrap zaak("zaak");
+    ClapTrap CP1("CP1");
+    ClapTrap CP2("CP2");
+    ScavTrap SP1("SP1");
+    FragTrap FP1("FP1");
+    DiamondTrap DP1("DP1");
 
-    zaak.attack("oussama");
+    CP1.attack("CP2");
+    SP1.attack("CP2");
+    FP1.attack("CP2");
+    CP2.takeDamage(5);
+    CP2.beRepaired(15);
+    DP1.attack("FP1");
+    FP1.takeDamage(20);
+    SP1.guardGate();
+    FP1.highFivesGuys();
+    DP1.whoAmI();
     return 0;
 }

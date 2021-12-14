@@ -2,17 +2,11 @@
 
 int main(){
 
-    ClapTrap yassine("yassine");
-    ClapTrap oussama("oussama");
-    ClapTrap brahim("brahim");
-    ClapTrap zaak(brahim);
+    ClapTrap CP1("CP1");
+    ClapTrap CP2("CP2");
 
-    yassine.attack("oussama");
-    oussama.takeDamage(yassine.get_attack_damage());
-    yassine.attack("oussama");
-    oussama.takeDamage(yassine.get_attack_damage());
-    brahim = oussama;
-    brahim.attack("oussama");
-    zaak.attack("oussama");
+    CP1.attack("CP2");
+    CP2.takeDamage(3);
+    CP2.beRepaired(2);
     return 0;
 }

@@ -2,18 +2,16 @@
 
 int main(){
 
-    ClapTrap yassine("yassine");
-    ScavTrap brahim("brahim");
-    ScavTrap oussama;
+    ClapTrap CP1("CP1");
+    ClapTrap CP2("CP2");
+    ClapTrap CP3;
+    ScavTrap SP1("SP1");
 
-    yassine.set_attack_damage(2);
-    yassine.attack("brahim");
-    brahim.takeDamage(yassine.get_attack_damage());
-    oussama = brahim;
-    oussama.attack("yassine");
-    yassine.set_attack_damage(4);
-    yassine.attack("oussama");
-    oussama.takeDamage(yassine.get_attack_damage());
-    oussama.guardGate();
+    CP1.attack("CP2");
+    CP2.takeDamage(3);
+    SP1.attack("CP2");
+    CP2.takeDamage(20);
+    CP2.beRepaired(10);
+    SP1.guardGate();
     return 0;
 }
