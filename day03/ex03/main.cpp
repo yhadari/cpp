@@ -18,5 +18,8 @@ int main(){
     SP1.guardGate();
     FP1.highFivesGuys();
     DP1.whoAmI();
+    FragTrap *pDp = new DiamondTrap("test");
+    pDp->attack("oussama");
+    delete pDp;
     return 0;
 }
