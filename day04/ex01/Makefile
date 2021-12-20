@@ -2,7 +2,7 @@ NAME = animal
 
 all : $(NAME)
 
-$(NAME) :
+$(NAME) : *.cpp
 	@clang++ -Wall -Wextra -Werror -std=c++98 *.cpp -o $(NAME)
 
 clean :

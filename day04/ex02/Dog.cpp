@@ -20,7 +20,7 @@ Dog& Dog::operator=(Dog const& autre){
     std::cout << "Dog Assignment" << std::endl;
     this->_type = autre._type;
     this->_brain = new Brain();
-    *(this->_brain) = *(autre._brain);
+    *this->_brain = *autre._brain;
     return *this;
 }
 
