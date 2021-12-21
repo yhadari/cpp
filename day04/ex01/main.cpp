@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 17:35:39 by yhadari           #+#    #+#             */
-/*   Updated: 2021/12/20 18:59:39 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/12/21 18:10:37 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ int main()
     const Animal* j = new Dog();
     const Animal* i = new Cat();
     const Animal *array[4];
-    Dog objet1;
-    Dog objet2 = objet1;
     array[0] = new Dog();
     array[1] = new Dog();
     array[2] = new Cat();

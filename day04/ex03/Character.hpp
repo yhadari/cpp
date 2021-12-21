@@ -2,11 +2,13 @@
 # define CHARACTER_H
 
 #include "ICharacter.hpp"
+#include "AMateria.hpp"
 
 class Character : public ICharacter{
 
     std::string _name;
-    
+    AMateria *_array[4];
+    int _size;
 
     public:
     Character();

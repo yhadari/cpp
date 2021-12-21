@@ -1,25 +1,22 @@
 #include "Ice.hpp"
 
-Ice::Ice(){
+Ice::Ice() : AMateria("ice"){
     this->_type = "ice";
-    std::cout << "Ice constructor" << std::endl;
 }
 
 Ice::~Ice(){
-    std::cout << "Ice destructor" << std::endl;
 }
 
 Ice::Ice(Ice const& copy){
     *this = copy;
 }
 
+Ice& Ice::operator=(Ice const& autre){
+    (void)autre;
+    return *this;
+}
+
 AMateria*   Ice::clone() const{
     AMateria *materia = new Ice();
     return materia;
-}
-
-Ice& Ice::operator=(Ice const& autre){
-}
-
-void    Ice::use(ICharacter& target){
 }
