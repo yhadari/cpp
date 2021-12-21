@@ -13,14 +13,14 @@ Cat::~Cat(){
 
 Cat::Cat(Cat const& copy){
     std::cout << "Cat Copy Constructor" << std::endl;
+    this->_brain = new Brain();
     *this = copy;
 }
 
 Cat& Cat::operator=(Cat const& autre){
     std::cout << "Cat Assignment" << std::endl;
     this->_type = autre._type;
-    this->_brain = new Brain();
-    *this->_brain = *autre._brain;
+    *(this->_brain) = *(autre._brain);
     return *this;
 }
 

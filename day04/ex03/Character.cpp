@@ -38,6 +38,6 @@ void Character::use(int idx, ICharacter& target){
 Character& Character::operator=(Character const& autre){
     this->_name = autre._name;
     for(int i = 0; i < 4; i++)
-        this->_array[i] = autre._array[i];
+        this->_array[i] = autre._array[i]->clone();
     return *this;
 }

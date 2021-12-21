@@ -13,13 +13,13 @@ Dog::~Dog(){
 
 Dog::Dog(Dog const& copy){
     std::cout << "Dog Copy Constructor" << std::endl;
+    this->_brain = new Brain();
     *this = copy;
 }
 
 Dog& Dog::operator=(Dog const& autre){
     std::cout << "Dog Assignment" << std::endl;
     this->_type = autre._type;
-    this->_brain = new Brain();
     *(this->_brain) = *(autre._brain);
     return *this;
 }
