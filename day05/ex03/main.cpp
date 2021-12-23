@@ -6,34 +6,30 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 17:35:39 by yhadari           #+#    #+#             */
-/*   Updated: 2021/12/22 11:15:52 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/12/15 21:59:08 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
-#include "Cure.hpp"
-#include "Ice.hpp"
-#include "Character.hpp"
-#include "ICharacter.hpp"
-#include "MateriaSource.hpp"
-#include "IMateriaSource.hpp"
+#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int main()
 {
-    IMateriaSource* src = new MateriaSource();
-    src->learnMateria(new Ice());
-    src->learnMateria(new Cure());
-    ICharacter* me = new Character("me");
-    AMateria* tmp;
-    tmp = src->createMateria("ice");
-    me->equip(tmp);
-    tmp = src->createMateria("cure");
-    me->equip(tmp);
-    ICharacter* bob = new Character("bob");
-    me->use(0, *bob);
-    me->use(1, *bob);
-    delete bob;
-    delete me;
-    delete src;
-    return 0;
+    const Animal* meta = new Animal();
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+    std::cout << j->getType() << " " << std::endl;
+    std::cout << i->getType() << " " << std::endl;
+    i->makeSound(); //will output the cat sound!
+    j->makeSound();
+    meta->makeSound();
+std::cout << "-----------------------WrongTest------------------------" << std::endl;
+    const WrongAnimal* test = new WrongAnimal();
+    const WrongAnimal* z = new WrongCat();
+    std::cout << z->getType() << " " << std::endl;
+    z->makeSound();
+    test->makeSound();
 }
