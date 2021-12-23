@@ -5,19 +5,34 @@ Form::Form() : _name("default"), _grade_signed(150), _grade_execute(150), _signe
 
 Form::Form(std::string const name, int grade_signed, int grade_execute) : _name(name), _grade_signed(grade_signed),
 _grade_execute(grade_execute), _signed(false){
-    
+    if (this->_grade_signed < 1 || this->_grade_execute < 1)
+        throw Form::GradeTooHighException();
+    if (this->_grade_signed > 150 || this->_grade_execute > 150)
+        throw Form::GradeTooLowException();
 }
 
-Form::Form(Form const& copy){
+Form::Form(Form const& copy) : _name("default"), _grade_signed(150), _grade_execute(150), _signed(false){
     *this = copy;
 }
 
 Form& Form::operator=(Form const& autre){
-    this->_signed = autre._signed;
+    (void)autre;
     return *this;
 }
 
 std::ostream&   operator<<(std::ostream& os, Form const& objet){
+    if (objet.get_Signed())
+        os << "The Form Is Signed";
+    else
+        os << "The Form Is Not Signed";
+    return os;
+}
+
+bool    Form::beSigned(Bureaucrat const& objet){
+    if (objet.get_Grade() > this->_grade_signed)
+        throw Form::GradeTooLowException();
+    this->_signed = true;
+    return true;
 }
 
 std::string const Form::get_Name() const{

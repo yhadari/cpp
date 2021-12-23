@@ -1,8 +1,9 @@
 #ifndef FORM_H
 # define FORM_H
 
-#include <iostream>
+#include "Bureaucrat.hpp"
 
+class Bureaucrat;
 class Form{
 
     std::string const _name;
@@ -29,7 +30,7 @@ class Form{
     int         get_Grade_Signed() const;
     int         get_Grade_Execute() const;
     bool        get_Signed() const;
-    void        beSigned();
+    bool        beSigned(Bureaucrat const& objet);
     ~Form();
 };
 std::ostream& operator<<(std::ostream& os, Form const& objet);

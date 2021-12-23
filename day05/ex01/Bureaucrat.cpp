@@ -39,6 +39,11 @@ void    Bureaucrat::grade_increment(){
     this->_grade--;
 }
 
+void    Bureaucrat::signForm(Form& objet){
+    if (objet.beSigned(*this))
+        std::cout << this->_name << " signs " << objet.get_Name() << std::endl;
+}
+
 std::ostream&   operator<<(std::ostream& os, Bureaucrat const& objet){
     os << objet.get_Name() << " bureaucrat grade " << objet.get_Grade();
     return os;
