@@ -22,7 +22,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 
 void    ShrubberyCreationForm::execute(Bureaucrat const & executor) const{
     std::ofstream file;
-    if (executor.)
+    if (executor.get_Grade() <= this->get_Grade_Execute())
     file.open(this->_target+"_shrubbery");
     file << "yassine" << std::endl;
     file.close();
