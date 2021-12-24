@@ -1,9 +1,11 @@
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat() : _name("default"), _grade(150){
+    std::cout << "bureaucrat default constructor" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name), _grade(grade){
+    std::cout << "bureaucrat parametre constructor" << std::endl;
     if (this->_grade < 1)
         throw Bureaucrat::GradeTooHighException();
     if (this->_grade > 150)
@@ -11,10 +13,12 @@ Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name), _grade(
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const& copy){
+    std::cout << "bureaucrat constructor par copie" << std::endl;
     *this = copy;
 }
 
 Bureaucrat& Bureaucrat::operator=(Bureaucrat const& autre){
+    std::cout << "bureaucrat Assignment operator" << std::endl;
     this->_grade = autre._grade;
     return *this;
 }
@@ -53,4 +57,5 @@ const char* Bureaucrat::GradeTooLowException::what() const throw(){
 }
 
 Bureaucrat::~Bureaucrat(){
+    std::cout << "bureaucrat destructor" << std::endl;
 }
