@@ -2,6 +2,7 @@
 # define FORM_H
 
 #include "Bureaucrat.hpp"
+#include <cstring>
 
 class Bureaucrat;
 class Form{
@@ -20,6 +21,14 @@ class Form{
     class   GradeTooLowException : public std::exception{
         public:
         virtual const char* what() const throw();
+    };
+
+    class   Formisigned : public std::exception{
+        std::string _name;
+        public:
+        Formisigned(std::string);
+        virtual const char* what() const throw();
+        ~Formisigned() throw(){};
     };
 
     Form();

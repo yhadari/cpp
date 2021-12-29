@@ -50,6 +50,13 @@ void    Bureaucrat::signForm(Form& objet){
         std::cout << this->_name << " cannot sign " << objet.get_Name() << " because low grade" << std::endl;
 }
 
+void    Bureaucrat::executeForm(Form const & form){
+    if (form.get_Grade_Execute() >= this->_grade)
+        std::cout << this->_name << " execute " << form.get_Name() << std::endl;
+    else
+        std::cout << this->_name << " cannot execute " << form.get_Name() << " because low grade" << std::endl;
+}
+
 std::ostream&   operator<<(std::ostream& os, Bureaucrat const& objet){
     os << objet.get_Name() << " bureaucrat grade " << objet.get_Grade();
     return os;

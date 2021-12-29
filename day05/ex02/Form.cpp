@@ -62,6 +62,17 @@ const char* Form::GradeTooLowException::what() const throw(){
     return "error : Too Low Grade";
 }
 
+Form::Formisigned::Formisigned(std::string name){
+    this->_name = name;
+}
+
+const char* Form::Formisigned::what() const throw(){
+    std::string str = "error : The Form " + this->_name + " Already signed";
+    char *s = new char[str.length() + 1];
+    strcpy(s, str.c_str());
+    return s;
+}
+
 Form::~Form(){
     std::cout << "form destructor" << std::endl;
 }
