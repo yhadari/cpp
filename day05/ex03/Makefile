@@ -1,4 +1,5 @@
-NAME = animal
+NAME = intern
+tree = *shrubbery
 
 all : $(NAME)
 
@@ -7,6 +8,7 @@ $(NAME) : *.cpp
 
 clean :
 	@rm -rf $(NAME)
+	@rm -rf $(tree)
 
 fclean : clean
 
