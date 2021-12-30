@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 17:35:39 by yhadari           #+#    #+#             */
-/*   Updated: 2021/12/30 17:23:26 by yhadari          ###   ########.fr       */
+/*   Updated: 2021/12/30 19:37:37 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main(){
         F1->execute(B1);
         F2->execute(B1);
         F3->execute(B1);
-        rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
+        rrf = someRandomIntern.makeForm("shrubbery creation", "Bender");
         rrf->execute(B1);
         
     }

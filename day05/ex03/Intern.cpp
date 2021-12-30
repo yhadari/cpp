@@ -16,16 +16,19 @@ Intern& Intern::operator=(Intern const& autre){
 
 Form*   Intern::CreatRobotomyRequest(std::string target){
     Form *ptr = new RobotomyRequestForm(target);
+    std::cout << "Intern creates " << target << " form" << std::endl;
     return ptr;
 }
 
 Form*   Intern::CreatShrubberyCreation(std::string target){
     Form *ptr = new ShrubberyCreationForm(target);
+    std::cout << "Intern creates " << target << " form" << std::endl;
     return ptr;
 }
 
 Form*   Intern::CreatPresidentialPardon(std::string target){
     Form *ptr = new PresidentialPardonForm(target);
+    std::cout << "Intern creates " << target << " form" << std::endl;
     return ptr;
 }
 
