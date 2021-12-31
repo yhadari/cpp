@@ -44,14 +44,14 @@ const char* Intern::form_not_exist::what() const throw(){
 }
 
 Form*   Intern::makeForm(std::string form, std::string target){
-    int index = 0;
+    int index = -1;
     std::string str[3] = {"robotomy request", "shrubbery creation", "presidential pardon"};
     Form* (Intern::*ptr_to_ft[3])(std::string target) = {&Intern::CreatRobotomyRequest, &Intern::CreatShrubberyCreation, &Intern::CreatPresidentialPardon};
     for (size_t i = 0; i < 3; i++){
         if (str[i] == form && (index = i))
             break;
     }
-    if (index == 0)
+    if (index == -1)
         throw Intern::form_not_exist(form);
     return (this->*ptr_to_ft[index])(target);
 }

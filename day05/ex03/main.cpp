@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/28 17:35:39 by yhadari           #+#    #+#             */
-/*   Updated: 2021/12/30 19:37:37 by yhadari          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
@@ -20,18 +8,29 @@ int main(){
     
     try{
         Intern someRandomIntern;
-        Form* rrf;
-        Bureaucrat B1("brahim",13);
-        Form *F1 = new ShrubberyCreationForm("home");
-        Form *F2 = new RobotomyRequestForm("home1");
-        Form *F3 = new PresidentialPardonForm("home2");
-        B1.executeForm(*F1);
-        F1->execute(B1);
-        F2->execute(B1);
-        F3->execute(B1);
-        rrf = someRandomIntern.makeForm("shrubbery creation", "Bender");
-        rrf->execute(B1);
-        
+
+        Form* sc;
+        Form* rr;
+        Form* pp;
+        Form* random;
+
+        sc = someRandomIntern.makeForm("shrubbery creation", "home");
+        rr = someRandomIntern.makeForm("robotomy request", "Home");
+        pp = someRandomIntern.makeForm("presidential pardon", "Bender");
+        random = someRandomIntern.makeForm("random form", "Hello");
+    
+        if (sc) {
+            std::cout << *sc;
+        }
+        if (rr) {
+            std::cout << *rr;
+        }
+        if (pp) {
+            std::cout << *pp;
+        }
+        if (random) {
+            std::cout << *random;
+        }
     }
     catch (std::exception& e){
         std::cout << e.what() << std::endl;
