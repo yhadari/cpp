@@ -23,12 +23,12 @@ class Form{
         virtual const char* what() const throw();
     };
 
-    class   Formisigned : public std::exception{
+    class   Form_is_not_signed : public std::exception{
         std::string _name;
         public:
-        Formisigned(std::string);
+        Form_is_not_signed(std::string);
         virtual const char* what() const throw();
-        ~Formisigned() throw(){};
+        ~Form_is_not_signed() throw(){};
     };
 
     Form();

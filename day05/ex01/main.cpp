@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/28 17:35:39 by yhadari           #+#    #+#             */
-/*   Updated: 2021/12/30 19:55:15 by yhadari          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
@@ -23,8 +11,12 @@ int main(){
         std::cout << B1 << std::endl;
         std::cout << B2 << std::endl;
         Form F1("form", 100, 100);
-        B2.signForm(F1);
         B1.signForm(F1);
+        std::cout << F1 << std::endl;
+        B2.signForm(F1);
+        F1.beSigned(B2);
+        std::cout << F1 << std::endl;
+        F1.beSigned(B1);
     }
     catch (std::exception& e){
         std::cout << e.what() << std::endl;

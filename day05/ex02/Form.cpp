@@ -25,9 +25,9 @@ Form& Form::operator=(Form const& autre){
 
 std::ostream&   operator<<(std::ostream& os, Form const& objet){
     if (objet.get_Signed())
-        os << "The Form Is Signed";
+        os << "The Form '" << objet.get_Name() << "' Is Signed";
     else
-        os << "The Form Is Not Signed";
+        os << "The Form '" << objet.get_Name() << "' Is Not Signed";
     return os;
 }
 
@@ -62,14 +62,13 @@ const char* Form::GradeTooLowException::what() const throw(){
     return "error : Too Low Grade";
 }
 
-Form::Formisigned::Formisigned(std::string name){
+Form::Form_is_not_signed::Form_is_not_signed(std::string name){
     this->_name = name;
 }
 
-const char* Form::Formisigned::what() const throw(){
-    std::string str = "error : The Form " + this->_name + " Already signed";
-    char *s = new char[str.length() + 1];
-    strcpy(s, str.c_str());
+const char* Form::Form_is_not_signed::what() const throw(){
+    std::string str = "error : The Form " + this->_name + " Is Not Signed";
+    const char *s = str.c_str();
     return s;
 }
 

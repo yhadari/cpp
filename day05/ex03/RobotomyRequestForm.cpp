@@ -22,7 +22,7 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm const& a
 }
 
 void    RobotomyRequestForm::execute(Bureaucrat const & executor) const{
-    if (executor.get_Grade() <= this->get_Grade_Execute() && !this->get_Signed()){
+    if (executor.get_Grade() <= this->get_Grade_Execute() && this->get_Signed()){
         static int i = 0;
         if (i%2 == 0)
             std::cout << this->_target << " has been robotomized successfully" << std::endl;
@@ -30,8 +30,8 @@ void    RobotomyRequestForm::execute(Bureaucrat const & executor) const{
             std::cout << this->_target << " it’s a failure" << std::endl;
         i++;
     }
-    else if(this->get_Signed())
-        throw Form::Formisigned(this->get_Name());
+    else if(not this->get_Signed())
+        throw Form::Form_is_not_signed(this->get_Name());
     else
         throw Form::GradeTooLowException();
 }

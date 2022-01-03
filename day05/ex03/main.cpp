@@ -8,29 +8,26 @@ int main(){
     
     try{
         Intern someRandomIntern;
+        Bureaucrat B1("bureau", 100);
 
-        Form* sc;
-        Form* rr;
-        Form* pp;
-        Form* random;
-
-        sc = someRandomIntern.makeForm("shrubbery creation", "home");
-        rr = someRandomIntern.makeForm("robotomy request", "Home");
-        pp = someRandomIntern.makeForm("presidential pardon", "Bender");
-        random = someRandomIntern.makeForm("random form", "Hello");
+        Form* sc = someRandomIntern.makeForm("shrubbery creation", "tree");
+        Form* rr = someRandomIntern.makeForm("robotomy request", "robotomy");
+        Form* pp = someRandomIntern.makeForm("presidential pardon", "presidential");
+        //Form* random = someRandomIntern.makeForm("random form", "Hello");
     
         if (sc) {
-            std::cout << *sc;
+            sc->beSigned(B1);
+            std::cout << *sc << std::endl;
         }
         if (rr) {
-            std::cout << *rr;
+            std::cout << *rr << std::endl;
         }
         if (pp) {
-            std::cout << *pp;
+            std::cout << *pp << std::endl;
         }
-        if (random) {
-            std::cout << *random;
-        }
+        /*if (random) {
+            std::cout << *random << std::endl;
+        }*/
     }
     catch (std::exception& e){
         std::cout << e.what() << std::endl;

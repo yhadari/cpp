@@ -38,8 +38,7 @@ Intern::form_not_exist::form_not_exist(std::string form){
 
 const char* Intern::form_not_exist::what() const throw(){
     std::string str = "this form '" + this->_form + "' not exist";
-    char *s = new char[str.length() + 1];
-    strcpy(s, str.c_str());
+    const char *s = str.c_str();
     return s;
 }
 
