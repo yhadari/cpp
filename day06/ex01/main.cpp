@@ -1,11 +1,14 @@
 #include <iostream>
 
 class Data{
-    public:
+
     int attribute;
 
-    Data(){std::cout << "hello" << std::endl;};
-    ~Data(){std::cout << "good bye" << std::endl;};
+    public:
+    Data(){std::cout << "Constructor Called" << std::endl;};
+    int     GetAttribute(void){return this->attribute;}
+    void    SetAttribute(int attribute){this->attribute = attribute;}
+    ~Data(){std::cout << "Destructor Called" << std::endl;};
 };
 
 uintptr_t   serialize(Data* ptr){
@@ -18,11 +21,15 @@ Data*   deserialize(uintptr_t raw){
 
 int main(void){
     Data *objet = new Data;
-    objet->attribute = 10;
+    objet->SetAttribute(10);
     uintptr_t i = serialize(objet);
     Data *objet2 = deserialize(i);
-    std::cout << "adress : " << objet << "| value : " << objet->attribute << std::endl;
-    std::cout << "adress : " << objet2 << "| value : " << objet2->attribute << std::endl;
-    delete objet;
+    std::cout << "adress 1: " << objet << "   value 1: " << objet->GetAttribute() << std::endl;
+    std::cout << "adress 2: " << objet2 << "   value 2: " << objet2->GetAttribute() << std::endl;
+    if (objet->GetAttribute() == objet2->GetAttribute())
+        std::cout << "The Return Value Is Equal" << std::endl;
+    else
+        std::cout << "Error" << std::endl;
+    delete objet2;
     return 0;
 }
