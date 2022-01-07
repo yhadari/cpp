@@ -5,12 +5,28 @@ class Data{
     int attribute;
 
     public:
-    Data(){std::cout << "Constructor Called" << std::endl;};
+    Data(){
+        std::cout << "Constructor Called" << std::endl;
+    };
+    Data(Data const &copy){
+        std::cout << "Constructor par copie Called" << std::endl;
+        *this = copy;
+    };
+    Data&   operator=(Data const& autre){
+        std::cout << "Assignment Operator Called" << std::endl;
+        this->attribute = autre.attribute;
+        return *this;
+    };
     int     GetAttribute(void){return this->attribute;}
     void    SetAttribute(int attribute){this->attribute = attribute;}
-    ~Data(){std::cout << "Destructor Called" << std::endl;};
+    ~Data(){
+        std::cout << "Destructor Called" << std::endl;
+    };
 };
 
+int * test(void * i){
+    return reinterpret_cast<int*>(i);
+}
 uintptr_t   serialize(Data* ptr){
     return reinterpret_cast<uintptr_t>(ptr);
 }
@@ -20,6 +36,7 @@ Data*   deserialize(uintptr_t raw){
 }
 
 int main(void){
+
     Data *objet = new Data;
     objet->SetAttribute(10);
     uintptr_t i = serialize(objet);
