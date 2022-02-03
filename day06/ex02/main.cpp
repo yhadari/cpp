@@ -50,6 +50,8 @@ int main(void){
     B b;
     C c;
 
+    int o = 1;
+    int *i = static_cast<int*>(&o);
     base = a.generate();
     identify(base);
     identify(*base);
