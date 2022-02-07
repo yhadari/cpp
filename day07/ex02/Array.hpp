@@ -12,7 +12,6 @@ class Array{
     public:
 
     class   OutOfBounds : public std::exception{
-        
         public:
 
         virtual const char* what() const throw(){
@@ -49,7 +48,7 @@ class Array{
         memcpy(this->_array, oArr._array, this->_size);
         return *this;
     }
-    size_t  size(){
+    size_t  size() const{
         return this->_size;
     };
     ~Array<T>(void){

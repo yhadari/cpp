@@ -1,6 +1,5 @@
 #define MAX_VAL 750
 #include "Array.hpp"
-#include <unistd.h>
 
 int main(int, char**)
 {
@@ -18,8 +17,6 @@ int main(int, char**)
         Array<int> tmp = numbers;
         Array<int> test(tmp);
     }
-
-    sleep(111);
 
     for (int i = 0; i < MAX_VAL; i++)
     {

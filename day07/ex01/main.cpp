@@ -1,19 +1,4 @@
-#include <iostream>
-
-template <typename T>
-
-void    print(T &arr){
-        std::cout << arr << std::endl; 
-}
-
-template <typename T>
-
-void    iter(T *arr, size_t arrSize, void(print)(T&)){
-    std::cout << "Address is : " << arr << std::endl;
-    std::cout << "Length is : " << arrSize << std::endl;
-    while (arrSize--)
-        print(*(arr++));
-}
+#include "iter.hpp"
 
 int main( void ) {
     int arr[] = {10,20,-30,40,50,-60,70};
