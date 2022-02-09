@@ -13,21 +13,25 @@ class Span{
 
     public:
 
-    class elementIsAlreadyExist : public std::exception{
+    class ElementIsAlreadyExist : public std::exception{
+
+        unsigned int _e;
         public:
         
+        ElementIsAlreadyExist(unsigned int e): _e(e){
+        }
         virtual const char* what() const throw(){
-            return "This Element Is Already Exist";
+            std::string str = "This Element Is Already Exist : ";
         }
     };
-    class noNumbersStored : public std::exception{
+    class NoNumbersStored : public std::exception{
         public:
         
         virtual const char* what() const throw(){
             return "No Numbers Stored";
         }
     };
-    class arrayIsFull : public std::exception{
+    class ArrayIsFull : public std::exception{
         public:
         
         virtual const char* what() const throw(){

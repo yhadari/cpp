@@ -8,9 +8,9 @@ void    Span::addNumber(unsigned int n){
     std::vector<unsigned int>::iterator it_find;
     it_find = std::find(this->_array_int.begin(), this->_array_int.end(), n);
     if (it_find != this->_array_int.end())
-        throw elementIsAlreadyExist();
+        throw ElementIsAlreadyExist(*it_find);
     if (this->_size == this->_N)
-        throw arrayIsFull();
+        throw ArrayIsFull();
     else
     {
         this->_array_int.push_back(n);
@@ -39,7 +39,7 @@ unsigned int    Span::shortestSpan(){
 unsigned int    Span::longestSpan(){
 
     if (this->_size <= 1)
-        throw noNumbersStored();
+        throw NoNumbersStored();
     std::vector<unsigned int>::iterator it_min;
     std::vector<unsigned int>::iterator it_max;
     it_min = std::min_element(this->_array_int.begin(), this->_array_int.end());
