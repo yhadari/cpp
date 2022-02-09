@@ -6,7 +6,7 @@ int main(){
     v.push_back(25);
     v.push_back(13);
     easyfind(v, 20);
-    easyfind(v, 13);
+    easyfind(v, 25);
 
     return 0;
 }

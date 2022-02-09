@@ -1,13 +1,15 @@
-#include "iter.hpp"
+#include "span.hpp"
 
-int main( void ) {
-    int arr[] = {10,20,-30,40,50,-60,70};
-    size_t arrSize = sizeof(arr)/sizeof(arr[0]);
-    iter(arr, arrSize, print);
-
-    std::string arr1[] = {"aaaaa", "bbbbb", "1337", "-42"};
-    arrSize = sizeof(arr1)/sizeof(arr1[0]);
-    iter(arr1, arrSize, print);
+int main()
+{
+    Span sp = Span(5);
+    sp.addNumber(6);
+    sp.addNumber(3);
+    sp.addNumber(17);
+    sp.addNumber(9);
+    sp.addNumber(11);
+    std::cout << sp.shortestSpan() << std::endl;
+    std::cout << sp.longestSpan() << std::endl;
 
     return 0;
 }
