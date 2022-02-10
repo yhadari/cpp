@@ -5,10 +5,6 @@ Span::Span(unsigned int N) : _N(N), _size(0){
 
 void    Span::addNumber(unsigned int n){
 
-    std::vector<unsigned int>::iterator it_find;
-    it_find = std::find(this->_array_int.begin(), this->_array_int.end(), n);
-    if (it_find != this->_array_int.end())
-        throw ElementIsAlreadyExist(*it_find);
     if (this->_size == this->_N)
         throw ArrayIsFull();
     else
@@ -22,12 +18,13 @@ unsigned int    Span::shortestSpan(){
 
     unsigned int shortSpan;
     unsigned int value;
-    std::vector<unsigned int>::iterator it_begin;
-    std::vector<unsigned int>::iterator it_end;
-    it_begin = this->_array_int.begin();
-    it_end = this->_array_int.end();
+
+    if (this->_size <= 1)
+        throw NoNumbersStored();
+    std::vector<unsigned int>::iterator it_begin = this->_array_int.begin();
+    std::vector<unsigned int>::iterator it_end = this->_array_int.end();
     std::sort(this->_array_int.begin(), this->_array_int.end());
-    shortSpan = *it_end;
+    shortSpan = *--it_end-(*--it_end);
     while (it_end != it_begin){
         value = *it_end-(*--it_end);
         if (value < shortSpan)

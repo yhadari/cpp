@@ -4,6 +4,8 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <map>
+#include <list>
 
 class Span{
 
@@ -13,28 +15,15 @@ class Span{
 
     public:
 
-    class ElementIsAlreadyExist : public std::exception{
-
-        unsigned int _e;
-        public:
-        
-        ElementIsAlreadyExist(unsigned int e): _e(e){
-        }
-        virtual const char* what() const throw(){
-            std::string str = "This Element Is Already Exist : ";
-        }
-    };
     class NoNumbersStored : public std::exception{
-        public:
-        
-        virtual const char* what() const throw(){
+
+        const char* what() const throw(){
             return "No Numbers Stored";
         }
     };
     class ArrayIsFull : public std::exception{
-        public:
-        
-        virtual const char* what() const throw(){
+
+        const char* what() const throw(){
             return "The Array Is Full";
         }
     };
@@ -42,6 +31,12 @@ class Span{
     void            addNumber(unsigned int n);
     unsigned int    shortestSpan();
     unsigned int    longestSpan();
+
+    template<typename T>
+    void    fill_array(T begin_it, T end_it, unsigned int n){
+        this->_array_int.insert (this->_array_int.begin(), begin_it, end_it);
+        this->_size = n;
+    }
     ~Span(void);
 };
 
